@@ -1,4 +1,4 @@
-/* shipping mode preference*//
+/* Overall Shipping mode preferences*/
 
 select ship_mode,
     count(order_id) as order_count,
@@ -19,16 +19,16 @@ from superstore
 group by ship_mode,shipping_days
 order by ship_mode, shipping_days;
 
-/*region wise shipping*/
+/*region wise shipping
 
 Select region, ship_mode,
     cast(avg(ship_Date- Order_date)as decimal(10,1)) as shipping_days,
     cast (sum(profit) as decimal (10,1)) as total_profit
 from superstore
 group by region, ship_mode
-order by region, shipping_days;
+order by region, shipping_days; */
 
-/* Ship Mode and Segment*/
+/* Segment-wise Shipping Mode Preferences and Profitability*/
 select segment, ship_mode,
     count(order_id) as order_count, 
     cast (sum(profit) as decimal (10,1)) as total_profit

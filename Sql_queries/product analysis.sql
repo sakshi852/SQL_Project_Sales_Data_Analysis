@@ -1,4 +1,4 @@
-/*Analysing the quantity sold of each product*/
+/*Determining the Best-Selling Products*/
 
 select product_name,
     cast (sum(quantity) as decimal (10,1)) as quantity_sold,
@@ -6,8 +6,7 @@ select product_name,
     cast (sum(profit) as decimal (10,1)) as total_profit
 from superstore
 group by product_name
-order by quantity_sold desc
-limit 10;
+order by quantity_sold descs;
 
 /*analysing the least profit margin products*/
 
@@ -20,7 +19,7 @@ group by product_name
 order by profit_margin_percentage asc
 limit 20;
 
-/*Analysing the low performing products*/
+/*Identifying low performing products*/
 
 select product_name,
     cast(sum(sales) as decimal(10,1)) as total_sales, 

@@ -1,6 +1,6 @@
 select count(DISTINCT(customer_id)) from superstore;
 
-/*Profit analysis */
+/*Top 10 Customers Driving Highest Profit*/
 
 select customer_id,
     cast (sum(quantity) as decimal (10,1)) as quantity_sold,
@@ -11,7 +11,7 @@ group by customer_id
 order by total_profit desc
 limit 10;
 
-/*average order value*/
+/*Top 10 Customers by Highest Average Order Value*/
 
 select customer_id,
     cast(avg(sales) as decimal(10,1)) as avg_sales
@@ -27,8 +27,7 @@ select segment, count(distinct(customer_id)) as distinct_customer,
     cast (sum(profit) as decimal (10,1)) as total_profit
 from superstore
 group by segment
-order by total_profit desc
-limit 10;
+order by total_profit desc;
 
 /*identifying customers by region and state*/
 select region, state, 

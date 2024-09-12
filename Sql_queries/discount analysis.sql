@@ -1,6 +1,8 @@
+/*Analyzing Discount Impact on Sales and Profitability*/
+
 select 
     discount,
-    sum((sales/(1-discount))-sales) as sum_discount,
+    cast(sum((sales/(1-discount))-sales) as decimal (10,1)) as sum_discount_value,
     cast (sum(quantity) as decimal (10,1)) as quantity_sold,
     cast(avg(sales) as decimal(10,1)) as avg_sales, 
     cast(sum(sales) as decimal(10,1)) as total_sales, 
@@ -11,12 +13,12 @@ group by discount
 order by discount desc
 
 
-/*total discount amount given per quarter*/
+/*Discount analysis broken down by quarter*/
 select 
     extract(quarter from order_date) as quarter,
     avg(discount) as avg_discount,
-    sum((sales/(1-discount))-sales) as sum_discount,
-    cast (sum(quantity) as decimal (10,1)) as quantity_sold,
+    cast(sum((sales/(1-discount))-sales) as decimal (10,1)) as sum_discount_value,
+    cast(sum(quantity) as decimal (10,1)) as quantity_sold,
     cast(avg(sales) as decimal(10,1)) as avg_sales, 
     cast(sum(sales) as decimal(10,1)) as total_sales, 
     cast (sum(profit) as decimal (10,1)) as total_profit,
@@ -25,11 +27,11 @@ from superstore
 group by quarter
 order by quarter asc
 
-/*total discount amount given region wise*/
+/*Discount analysis broken down by region*/
 select 
     region,
     avg(discount) as avg_discount,
-    sum((sales/(1-discount))-sales) as sum_discount,
+    cast(sum((sales/(1-discount))-sales) as decimal (10,1))as sum_discount_value,
     cast (sum(quantity) as decimal (10,1)) as quantity_sold,
     cast(avg(sales) as decimal(10,1)) as avg_sales, 
     cast(sum(sales) as decimal(10,1)) as total_sales, 
@@ -39,11 +41,11 @@ from superstore
 group by region
 order by sum_discount desc
 
-/*total discount amount given category wise*/
+/*Discount analysis broken down by category*/
 select 
     category,
     avg(discount) as avg_discount,
-    sum((sales/(1-discount))-sales) as sum_discount,
+    cast(sum((sales/(1-discount))-sales) as decimal (10,1))as sum_discount_value,
     cast (sum(quantity) as decimal (10,1)) as quantity_sold,
     cast(avg(sales) as decimal(10,1)) as avg_sales, 
     cast(sum(sales) as decimal(10,1)) as total_sales, 
