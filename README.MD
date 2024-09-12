@@ -49,7 +49,7 @@ This project focuses on answering the following key business questions:
 
 # Analysis 
 
-### Sales and Profit Analysis
+## Sales and Profit Analysis
 <a name="sales-and-profit-analysis"></a> 
 
 
@@ -74,11 +74,9 @@ from summary;
 
 ####  📊 Key Insights:
 
-The year-wise sales and profit data reveals a steady upward trend overall, with a slight dip in sales in 2015. Despite this, profit still grew in 2015, suggesting effective cost management. 
-
-Significant growth in both sales (29.5%) and profit (32.7%) in 2016 indicates a year of strong performance, likely driven by strategic decisions or market conditions. 
-
-The momentum continued in 2017 with both sales and profits increasing, although at a slower pace compared to 2016. Optimizing strategies during periods of slower growth could help sustain long-term profitability and sales increases.
+- The year-wise sales and profit data reveals a steady upward trend overall, with a slight dip in sales in 2015. Despite this, profit still grew in 2015, suggesting effective cost management. 
+- Significant growth in both sales (29.5%) and profit (32.7%) in 2016 indicates a year of strong performance, likely driven by strategic decisions or market conditions. 
+-  The momentum continued in 2017 with both sales and profits increasing, although at a slower pace compared to 2016. Optimizing strategies during periods of slower growth could help sustain long-term profitability and sales increases.
 
 <br/>
 
@@ -191,7 +189,7 @@ On the other hand, Supplies, Bookcases, and Tables are struggling with negative 
 
 </br>
 
-### Product Performance
+## Product Performance
 <a name="product-performance"></a> 
 
 
@@ -257,7 +255,7 @@ Additionally, conducting market research and gathering customer feedback will be
 
 </br>
 
-### Discount Impact
+## Discount Impact
 <a name="discount-impact"></a> 
 
 
@@ -279,11 +277,9 @@ order by discount desc
 
 ####  📊 Key Insights:
 
-High Discounts and Losses: Discounts of 0.8 to 0.6 drive large sales volumes but lead to severe losses, with profit margins ranging from -180% to -89%. These deep discounts are unsustainable and heavily erode profitability, indicating the need to reassess their effectiveness.
-
-Moderate Discounts and Balanced Margins: Discounts from 0.5 to 0.3 offer a better balance between sales and profitability. While profit margins remain negative, the losses are less extreme, suggesting this range could be optimized for better results.
-
-Low Discounts and Profitability: Discounts of 0.2 and below yield positive profit margins (12%-17%), proving more sustainable. These discounts attract fewer sales but generate higher profits, offering a strategic approach to retaining customers while boosting profitability.
+- High Discounts and Losses: Discounts of 0.8 to 0.6 drive large sales volumes but lead to severe losses, with profit margins ranging from -180% to -89%. These deep discounts are unsustainable and heavily erode profitability, indicating the need to reassess their effectiveness.
+- Moderate Discounts and Balanced Margins: Discounts from 0.5 to 0.3 offer a better balance between sales and profitability. While profit margins remain negative, the losses are less extreme, suggesting this range could be optimized for better results.
+- Low Discounts and Profitability: Discounts of 0.2 and below yield positive profit margins (12%-17%), proving more sustainable. These discounts attract fewer sales but generate higher profits, offering a strategic approach to retaining customers while boosting profitability.
 
 A tiered discount strategy, using lower discounts for profitability and higher ones selectively, can balance volume and profit while maintaining customer satisfaction.
 
@@ -308,19 +304,17 @@ order by quarter asc
 ##### **same query is used for region and category wise analysis*
 
 ####  📊 Key Insights:
+
 * Quarterly Discount Patterns:
 Discounts tend to increase throughout the year, with Q4 having the highest average discount at 15.6%. This is correlated with the highest total discount amount in Q4 ($214,097.28) and the highest total sales. Despite the increase in discount, profit margins remain relatively stable, ranging from 12% to 13% across the quarters.
-
 * Regional Discount Trends:
 Central Region has the highest average discount at 24%, leading to significant total discounts but with a lower profit margin of 8%. West Region maintains the lowest average discount at around 11%, resulting in the highest profit margin of 15%. East and South regions have average discounts of 14.5% and 14.7%, respectively, with profit margins of 13% and 12%.
-
-
 * Category-Specific Discount Analysis:
 Furniture has the highest average discount at 17.4%, which results in the lowest profit margin of just 2%. Office Supplies and Technology have average discounts of 15.7% and 13.2%, respectively, with higher profit margins of 17% for both. The high discount on Furniture appears to significantly impact its profitability compared to other categories.
 
 </br>
 
-### Shipping Mode Analysis
+## Shipping Mode Analysis
 <a name="shipping-mode-analysis"></a> 
 
 
@@ -339,13 +333,10 @@ order by count(order_id) desc;
 ```
 ####  📊 Key Insights:
 
-Standard Class: Most orders are shipped this way, generating the highest sales and profit. It has a moderate shipping time of 5 days and a profit margin of 12%.
-
-Second Class: This method handles fewer orders than Standard but still shows strong performance with a slightly better profit margin of 13%. It ships faster than Standard Class, with an average of 3.2 days.
-
-First Class: Known for its high profit margin (14%) and the fastest shipping time (2.2 days), it has fewer orders and generates less total sales and profit compared to Standard and Second Class.
-
-Same Day: This method has the fastest shipping (0 days) but results in the lowest sales and profit. It matches Standard Class’s profit margin of 12%.
+- Standard Class: Most orders are shipped this way, generating the highest sales and profit. It has a moderate shipping time of 5 days and a profit margin of 12%.
+- Second Class: This method handles fewer orders than Standard but still shows strong performance with a slightly better profit margin of 13%. It ships faster than Standard Class, with an average of 3.2 days.
+- First Class: Known for its high profit margin (14%) and the fastest shipping time (2.2 days), it has fewer orders and generates less total sales and profit compared to Standard and Second Class.
+- Same Day: This method has the fastest shipping (0 days) but results in the lowest sales and profit. It matches Standard Class’s profit margin of 12%.
 
 Each shipping mode offers different advantages in terms of speed, sales, and profitability.
 
@@ -365,11 +356,9 @@ order by ship_mode, shipping_days;
 
 ####  📊 Key Insights:
 
-Shorter Shipping Days (Same Day, 1 Day): Same Day shipping shows a consistent profit with relatively few orders, but higher profits are seen for a shorter average shipping time. First Class has a similar trend with higher average profits for shorter shipping times (1-2 days).
-
-Medium Shipping Days (3-5 Days): For Second Class, profitability is relatively stable with moderate shipping days, peaking at around 5 days. Standard Class also maintains decent profitability across shipping days of 3-7, with some fluctuations.
-
-Longer Shipping Days: Longer shipping days (4-7 days) generally show stable to improved profitability for Standard Class, while First Class has a sharp drop in profit for orders with a 4-day shipping time.
+- Shorter Shipping Days (Same Day, 1 Day): Same Day shipping shows a consistent profit with relatively few orders, but higher profits are seen for a shorter average shipping time. First Class has a similar trend with higher average profits for shorter shipping times (1-2 days).
+- Medium Shipping Days (3-5 Days): For Second Class, profitability is relatively stable with moderate shipping days, peaking at around 5 days. Standard Class also maintains decent profitability across shipping days of 3-7, with some fluctuations.
+- Longer Shipping Days: Longer shipping days (4-7 days) generally show stable to improved profitability for Standard Class, while First Class has a sharp drop in profit for orders with a 4-day shipping time.
 
 <br/>
 
@@ -385,15 +374,13 @@ order by segment,avg(ship_Date- Order_date);
 ```
 ####  📊 Key Insights:
 
-Consumer Segment: Prefers Standard Class and Second Class for their cost-effectiveness and reliability. While Same Day and First Class are less popular, they still contribute to profitability with First Class performing better than Same Day.
-
-Corporate Segment: Shows a similar preference for Standard Class and Second Class. The higher total profit from Standard Class indicates that corporate clients value its balance of cost and delivery speed. Same Day and First Class are less utilized in this segment, indicating that businesses prefer more cost-effective options.
-
-Home Office Segment: Aligns with the overall trend of favoring Standard Class for its profitability and order volume. Second Class also performs well, but Same Day and First Class have a smaller impact, suggesting that Home Office customers value cost-efficiency and are less focused on rapid delivery.
+- Consumer Segment: Prefers Standard Class and Second Class for their cost-effectiveness and reliability. While Same Day and First Class are less popular, they still contribute to profitability with First Class performing better than Same Day.
+- Corporate Segment: Shows a similar preference for Standard Class and Second Class. The higher total profit from Standard Class indicates that corporate clients value its balance of cost and delivery speed. Same Day and First Class are less utilized in this segment, indicating that businesses prefer more cost-effective options.
+- Home Office Segment: Aligns with the overall trend of favoring Standard Class for its profitability and order volume. Second Class also performs well, but Same Day and First Class have a smaller impact, suggesting that Home Office customers value cost-efficiency and are less focused on rapid delivery.
 
 </br>
 
-### Customer Segmentation and Retention
+## Customer Segmentation and Retention
 
 <a name="customer-segmentation-and-retention"></a> 
 
@@ -453,11 +440,9 @@ order by total_profit desc;
 
 ####  📊 Key Insights:
 
-Consumer Segment: The largest segment with 409 unique customers, generating the highest total profit of $134,119.2. They account for the highest quantity sold and total sales, indicating strong overall performance and profitability.
-
-Corporate Segment: Comprising 236 customers, this segment shows substantial profitability with a total of $91,979.1, despite fewer customers and lower total sales compared to the Consumer segment. It still contributes significantly to revenue.
-
-Home Office Segment: With 148 customers, this segment has the lowest total sales and profit but remains a significant part of the business with a total profit of $60,298.7. The lower numbers suggest a more niche market compared to Consumers and Corporates.
+- Consumer Segment: The largest segment with 409 unique customers, generating the highest total profit of $134,119.2. They account for the highest quantity sold and total sales, indicating strong overall performance and profitability.
+- Corporate Segment: Comprising 236 customers, this segment shows substantial profitability with a total of $91,979.1, despite fewer customers and lower total sales compared to the Consumer segment. It still contributes significantly to revenue.
+- Home Office Segment: With 148 customers, this segment has the lowest total sales and profit but remains a significant part of the business with a total profit of $60,298.7. The lower numbers suggest a more niche market compared to Consumers and Corporates.
 
 
 </br>
@@ -478,13 +463,10 @@ limit 10;
 
 ####  📊 Key Insights:
 
-West Region: Dominates in customer numbers with a strong presence in California (577 customers) and Washington (224 customers). This suggests a high customer base and potential market strength in this region.
-
-East Region: Also shows substantial customer numbers, especially in New York (415 customers) and Pennsylvania (257 customers). Despite having fewer top customers compared to the West, it maintains significant market coverage.
-
-Central Region: Has notable customer counts with Texas (370 customers) and Illinois (237 customers). However, the Central region also shows some negative profitability, indicating potential issues in customer satisfaction or cost management.
-
-South Region: Includes several states like Florida (181 customers), North Carolina (122 customers), and Virginia (107 customers). While the South has fewer top customers compared to other regions, Virginia stands out with a positive profit despite a smaller customer base.
+- West Region: Dominates in customer numbers with a strong presence in California (577 customers) and Washington (224 customers). This suggests a high customer base and potential market strength in this region.
+- East Region: Also shows substantial customer numbers, especially in New York (415 customers) and Pennsylvania (257 customers). Despite having fewer top customers compared to the West, it maintains significant market coverage.
+- Central Region: Has notable customer counts with Texas (370 customers) and Illinois (237 customers). However, the Central region also shows some negative profitability, indicating potential issues in customer satisfaction or cost management.
+- South Region: Includes several states like Florida (181 customers), North Carolina (122 customers), and Virginia (107 customers). While the South has fewer top customers compared to other regions, Virginia stands out with a positive profit despite a smaller customer base.
 
 
 </br>
@@ -511,7 +493,7 @@ These are the top 10 customers who place the highest number of orders, indicatin
 # Conclusion
 
 
-The ***Sales and Profit Analysis*** section reveals several key insights:
+***Sales and Profit Analysis***
 
 * Yearly and Quarterly Trends: Sales and profits have shown steady growth overall, with notable peaks in Q4 and significant annual increases from 2014 to 2017. However, growth rates varied, with Q4 and the final year showing the highest performance. Emphasizing Q1 improvements and managing seasonal fluctuations could balance sales more evenly throughout the year.
 
@@ -523,7 +505,7 @@ Overall, the analysis indicates a robust growth trajectory with specific areas n
 
 </br>
 
-The ***product performance analysis*** highlights the following:
+***Product performance analysis***
 
 * High Performers: Products such as "Easy-staple paper" and "Staple envelope" show high sales and profits, reflecting strong market demand. These successful products should be the focus of inventory and marketing optimization strategies.
 
@@ -533,7 +515,7 @@ The ***product performance analysis*** highlights the following:
 
 </br>
 
-The ***discount analysis*** section highlights the following:
+***Discount impact analysis***
 
 * Implementing a tiered discount strategy might work best. Offering lower discounts generally yields better profitability, but selectively applying higher discounts in specific scenarios (e.g., for strategic customer acquisition or clearing inventory) could balance volume and profit. Ensure that discount policies align with customer expectations and market trends to maintain competitiveness and customer satisfaction.
 
@@ -541,7 +523,7 @@ The ***discount analysis*** section highlights the following:
 
 </br>
 
-Below is the summary of ***shipping mode analysis***
+***Shipping mode analysis***
 
 * Standard Class: This mode has the highest total orders and profitability across all segments (Consumer, Corporate, Home Office) and regions (East, Central, South, West). It consistently performs well due to its balance of cost and delivery speed, making it the preferred choice for many customers. Standard Class also shows stable profitability across regions and segments, indicating widespread acceptance.
 
@@ -551,7 +533,7 @@ Below is the summary of ***shipping mode analysis***
 
 </br>
 
-Below are the insights driven from ***Customer analysis*** section
+***Customer Segmentation and Retention analysis***
 
 * Top Profit Drivers: The top 10 customers by profit significantly contribute to the store’s profitability, with high total profits and substantial order volumes. Retaining these customers is crucial for sustaining revenue, and personalized strategies to enhance their experience could drive further growth.
 
