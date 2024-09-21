@@ -3,7 +3,6 @@ select count(DISTINCT(customer_id)) from superstore;
 /*Top 10 Customers Driving Highest Profit*/
 
 select customer_id,
-    cast (sum(quantity) as decimal (10,1)) as quantity_sold,
     cast(sum(sales) as decimal(10,1)) as total_sales, 
     cast (sum(profit) as decimal (10,1)) as total_profit
 from superstore

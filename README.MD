@@ -72,6 +72,8 @@ select *,
 from summary;
 ```
 
+![Total Sales and Profit](image-6.png)
+
 ####  📊 Key Insights:
 
 - The year-wise sales and profit data reveals a steady upward trend overall, with a slight dip in sales in 2015. Despite this, profit still grew in 2015, suggesting effective cost management. 
@@ -98,6 +100,9 @@ select *,
 from summary;
 ```
 
+![Quarter wise Sales and Profit](image-7.png)
+
+
 ####  📊 Key Insights:
 
 The data reveals a consistent increase in sales and profit throughout the quarters, with Q4 showing the highest performance. Sales surged by 43% and profits by 52.7% in Q4, which suggests strong seasonal effects or effective end-of-year strategies. Q3 also demonstrated significant growth, indicating a robust period, while Q1 lagged behind with the lowest figures.
@@ -118,6 +123,9 @@ from superstore
 group by segment
 order by total_sales;
 ```
+
+![Segment wise Sales and Profit](image-8.png)
+
 ####  📊 Key Insights:
 
 The Consumer segment leads with the highest sales and profit, despite having the lowest profit margin of 12%. The Corporate segment shows strong sales and a decent profit margin of 13%, while the Home Office segment, though having the smallest sales, exhibits a slightly higher profit margin of 14%. 
@@ -137,6 +145,8 @@ from superstore
 group by region
 order by total_sales desc;
 ```
+
+![Region wise Sales and Profit](image-3.png)
 
 ####  📊 Key Insights:
 
@@ -160,6 +170,8 @@ group by category
 order by total_sales desc;
 ```
 
+![Category wise Sales and Profit](image-9.png)
+
 ####  📊 Key Insights:
 
 The data reveals that the Technology and Office Supplies categories are the most profitable, each achieving high profit margins, with Technology standing out for its exceptional performance. 
@@ -180,6 +192,10 @@ from superstore
 group by Sub_category
 order by profit_margin_percentage desc;
 ```
+
+![Sub Category wise Sales and Profit](image-10.png)
+![Profit Margin](image-5.png)
+
 
 ####  📊 Key Insights:
 
@@ -223,6 +239,7 @@ group by product_name
 order by profit_margin_percentage asc
 limit 20;
 ```
+![Least profit margin products](image-11.png)
 
 ####  📊 Key Insights:
 
@@ -246,6 +263,8 @@ having
 order by total_profit asc
 limit 10;
 ```
+
+![Low Performing Products](image-12.png)
 
 ####  📊 Key Insights:
 
@@ -274,6 +293,7 @@ from superstore
 group by discount
 order by discount desc
 ```
+![Discount Analysis](image-13.png)
 
 ####  📊 Key Insights:
 
@@ -290,19 +310,19 @@ A tiered discount strategy, using lower discounts for profitability and higher o
 ```sql
 select 
     extract(quarter from order_date) as quarter,
-    avg(discount) as avg_discount,
+    cast(avg(discount) as decimal (10,1)) as avg_discount,
     cast(sum((sales/(1-discount))-sales) as decimal (10,1)) as sum_discount_value,
     cast(sum(quantity) as decimal (10,1)) as quantity_sold,
-    cast(avg(sales) as decimal(10,1)) as avg_sales, 
-    cast(sum(sales) as decimal(10,1)) as total_sales, 
-    cast (sum(profit) as decimal (10,1)) as total_profit,
     cast((sum(Profit)/sum(Sales)) *100 as decimal(10,0)) AS profit_margin_percentage
 from superstore
 group by quarter
 order by quarter asc
 ```
-##### **same query is used for region and category wise analysis*
+##### **same query was used for region and category wise analysis*
 
+![Quarter wise](image-14.png)
+![Region wise](image-15.png)
+![Category wise](image-16.png)
 ####  📊 Key Insights:
 
 * Quarterly Discount Patterns:
@@ -331,6 +351,9 @@ from superstore
 group by ship_mode
 order by count(order_id) desc;
 ```
+
+![Shipping mode](image-17.png)
+
 ####  📊 Key Insights:
 
 - Standard Class: Most orders are shipped this way, generating the highest sales and profit. It has a moderate shipping time of 5 days and a profit margin of 12%.
@@ -354,6 +377,8 @@ group by ship_mode,shipping_days
 order by ship_mode, shipping_days;
 ```
 
+![Shipping days](image-18.png)
+
 ####  📊 Key Insights:
 
 - Shorter Shipping Days (Same Day, 1 Day): Same Day shipping shows a consistent profit with relatively few orders, but higher profits are seen for a shorter average shipping time. First Class has a similar trend with higher average profits for shorter shipping times (1-2 days).
@@ -372,6 +397,8 @@ from superstore
 group by segment, ship_mode
 order by segment,avg(ship_Date- Order_date);
 ```
+![Segment wise](image-19.png)
+
 ####  📊 Key Insights:
 
 - Consumer Segment: Prefers Standard Class and Second Class for their cost-effectiveness and reliability. While Same Day and First Class are less popular, they still contribute to profitability with First Class performing better than Same Day.
@@ -395,7 +422,6 @@ select count(DISTINCT(customer_id)) from superstore;
 
 ```sql
 select customer_id,
-    cast (sum(quantity) as decimal (10,1)) as quantity_sold,
     cast(sum(sales) as decimal(10,1)) as total_sales, 
     cast (sum(profit) as decimal (10,1)) as total_profit
 from superstore
@@ -403,6 +429,8 @@ group by customer_id
 order by total_profit desc
 limit 10;
 ```
+![Profit](image-20.png)
+
 ####  📊 Key Insights:
 
 Above are the top 10 customers which drive the maximum profit for the store, with TC-20980 leading at $8,981.3. These customers are crucial for the store's profitability, highlighting their significant impact on overall financial performance.
@@ -419,6 +447,8 @@ group by customer_id
 order by avg_sales desc
 limit 10;
 ```
+
+![Avg_Sales](image-21.png)
 
 ####  📊 Key Insights:
 
@@ -437,6 +467,7 @@ from superstore
 group by segment
 order by total_profit desc;
 ```
+![Segment](image-22.png)
 
 ####  📊 Key Insights:
 
@@ -447,7 +478,7 @@ order by total_profit desc;
 
 </br>
 
-2. **Identifying customers by region and state**
+3. **Identifying customers by region and state**
 
 ```sql
 select region, state, 
@@ -460,6 +491,7 @@ group by region, state
 order by distinct_customer desc
 limit 10;
 ```
+![Region](image-23.png)
 
 ####  📊 Key Insights:
 
@@ -471,7 +503,7 @@ limit 10;
 
 </br>
 
-2. **Total orders per customer**
+4. **Total orders per customer**
 
 ```sql
 select distinct(customer_id),
@@ -483,6 +515,8 @@ having count(DISTINCT(order_id))>1
 order by count(DISTINCT(order_id)) desc
 limit 10;
 ```
+
+![Orders](image-25.png)
 
 ####  📊 Key Insights:
 

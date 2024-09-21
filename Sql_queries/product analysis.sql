@@ -6,7 +6,7 @@ select product_name,
     cast (sum(profit) as decimal (10,1)) as total_profit
 from superstore
 group by product_name
-order by quantity_sold descs;
+order by quantity_sold desc;
 
 /*analysing the least profit margin products*/
 
